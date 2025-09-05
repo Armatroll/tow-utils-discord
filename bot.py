@@ -5,7 +5,7 @@ from discord.ext import tasks
 
 BASE_URL = ""
 GET_SERVER_STATE_ENDPOINT = "/get_server_state"
-GUILD_ID = 619962205713989652
+GUILD_ID = 1377942591169105942
 
 # --- Slash command ---
 async def info(interaction: discord.Interaction):
