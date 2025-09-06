@@ -5,7 +5,7 @@ from discord import app_commands
 
 BASE_URL = ""
 GET_SERVER_STATE_ENDPOINT = "/get_server_state"
-# GUILD_ID = 1377942591169105942 # 
+# GUILD_ID = 1377942591169105942 # TOW
 GUILD_ID = 619962205713989652 # TEST
 
 
@@ -53,6 +53,8 @@ with open("token", "r") as file:
     token = file.read().strip()
 with open("endpoint", "r") as file:
     BASE_URL = file.read().strip()
+with open("guild", "r") as file:
+    GUILD_ID = int(file.read().strip())
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -75,7 +77,7 @@ async def status(interaction: discord.Interaction):
                         "```\n"
                         f"{'Server:':15} {server_name}\n"
                         f"{'Online Players:':15} {online_players}/128 players\n"
-                        f"{'Uptime:':15} {uptime_seconds/60:.2f}/120 minutes\n"
+                        f"{'Uptime:':15} {uptime_seconds/60:.0f}/120 minutes\n"
                         "```"
                     )
                 else:
